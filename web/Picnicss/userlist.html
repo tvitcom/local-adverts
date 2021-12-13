@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<title>LOCALADVERTS - Пользователи</title>
+<meta charset="utf-8"><meta name="theme-color" content="#317EFB"/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="keywords" content="объявления, разместить, бесплатно, Харьков, Украина, купить, рубрика, категория, аренда, авто, велосипед, спорт, услуги, мастера, компьютер, мебель, ремонт">
+<meta name="description" content="локаладвертс сайт частных объявлений города Харьков">
+<link rel="stylesheet" href="/assets/style/style.css">
+<link rel="icon" href="/assets/img/basket.png" type="image/png">
+<link rel="stylesheet" media="screen" href="/assets/style/prism.css">
+<style>
+aside a.top {
+  font-size: 0;
+  position: fixed;
+  bottom: 0;
+  font-weight: bold;
+  width: 180px;
+  padding: .6em 0;
+  margin-bottom: 0;
+  border-radius: .3em .3em 0 0;
+  transition: all .3s ease;
+}
+
+aside a.top.visible {
+  font-size: 1em;
+}
+
+aside .links a.button {
+  text-align: left;
+}
+
+@media all and (max-width: 1000px) {
+  aside a.pseudo.top {
+    background: rgba(255, 255, 255, .8);
+    width: 100%;
+    left: 0;
+    text-align: center;
+    z-index: 100;
+  }
+}
+
+.documentation article > h2 {
+  margin: -2em 0 .6em;
+  padding: 3em 0 0;
+  line-height: 1;
+}
+
+.documentation article > h3 {
+  margin-bottom: .6em;
+}
+
+.documentation aside h2 {
+  margin-top: 0;
+  padding: 1.25em 0;
+  line-height: 1;
+}
+
+.documentation aside a.pseudo {
+  color: #0074D9;
+  margin: 0;
+}
+
+.documentation > section {
+  background: #fff;
+  text-align: left;
+  width: 90%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 80px 0 0;
+}
+
+.documentation article > h1 {
+  margin: 0;
+  padding: 0.6em 0;
+  font-size: 2em;
+  line-height: 1.5;
+}
+
+.documentation aside a.button {
+  display: block;
+}
+
+.documentation pre[class*="language-"] {
+  margin-top: 10px;
+  margin-bottom: 40px;
+}
+
+.documentation .index pre {
+  margin: 0;
+  font-size: .9em;
+}
+</style>
+</head>
+<body>
+  <form id="logoutlink" method="post" enctype="multipart/form-data" action="/auth/logout.html" target="_self"></form>
+  <nav>
+    <a href="/index.html" class="brand" hreflang="ru"><span>LOCALADVERTS</span></a>
+    <input id="bmenu" type="checkbox" class="show"><label for="bmenu" class="burger toggle pseudo button">Открыть меню</label>
+    <div class="menu">
+      <a href="/index.html" class="pseudo button">На главную</a>
+      <a href="/publication.html#form" target="_self" class="button success">Разместить</a>
+      <a href="/publication.html#about" target="_self" class="button">О сайте</a>
+      <button form="logoutlink" class="button warming">Выход</button>
+    </div>
+  </nav>
+  <main id="home" class="documentation">
+    <section class="flex five">
+      <aside class="full fifth-1000">
+        <h2>Разделы</h2>
+        <div class="links flex two three-500 five-800 one-1000">
+          <div>
+            <a class="pseudo button" href="/my/useradverts.html">Объявления</a>
+          </div>
+          <div>
+            <a class="pseudo button" href="/my/usermessages.html">Сообщения</a>
+          </div>
+          {{if eq .user.UserId 1 }}
+          <div>
+            <a class="pseudo button" href="/my/userlist.html"><b>Пользователи</b></a>
+          </div>
+          {{end}}
+          <div>
+            <a class="pseudo button" href="/my/userprofile.html">Профиль</a>
+          </div>
+        </div>
+        <a href="#home" tabindex="-1" class="top pseudo button visible">▲ Наверх ▲</a>
+      </aside>
+      <article class="full four-fifth-1000">
+        
+
+<h2 id="tabs">Пользователи</h2>
+<table class="primary">
+  <thead>
+    <tr>
+      <th>дата</th>
+      <th>имя</th>
+      <th>email</th>
+      <th>группа</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{ range .users }}
+    <tr>
+      <td>{{ if eq .Lastlogin "0001-01-01T00:00:00Z" }}гость{{ else }}{{ .Lastlogin }}{{ end }}</td>
+      <td>{{ .Name }}</td>
+      <td>{{ .Email }}</td>
+      <td>{{ .Roles }}</td>
+    </tr>
+    {{ end }}
+<!--     <tr>
+      <td>Francisco</td>
+      <td>Francisco</td>
+      <td>Valencia, Spain</td>
+      <td>23</td>
+    </tr>
+    <tr>
+      <td>Eve</td>
+      <td>23 июля</td>
+      <td>San Francisco, USA</td>
+      <td>22</td>
+    </tr>
+    <tr>
+      <td>Martin</td>
+      <td>Martin</td>
+      <td>New York, USA</td>
+      <td>45</td>
+    </tr>
+    <tr>
+      <td>Sarah</td>
+      <td>Sarah</td>
+      <td>London, UK</td>
+      <td>25</td>
+    </tr> -->
+  </tbody>
+</table>
+
+</article>
+</section>
+</main>
+<script src="/assets/umbrella.min.js"></script>
+<script src="/assets/prism.js">/* http://prismjs.com/download.html?themes=prism&languages=markup+css+clike+javascript */</script>
+<script>
+  u('h2[id]').each(function(node){
+  u(node).attr('id', u(node).attr('id').replace(/-/g, ''));
+});
+
+// u('aside .links').append(function(node){
+//   return u('<div>').append(u('<a>')
+//     .addClass('pseudo button')
+//     .attr('href', '#' + node.id)
+//     .html(node.innerHTML));
+// }, u('article h2'));
+
+u('pre .lang-html').each(function(node){
+  // The <div> is needed because otherwise, `.before()` removes whitespaces
+  u(node).parent().before(u('<div>').html(u(node).parent().text()));
+});
+
+u('pre .lang-css').each(function(node){
+  u(node).parent().before(u('<style>').html(u(node).parent().text()));
+});
+
+
+u('aside a').on('click', function(e){
+  try {
+    var to = u(e.currentTarget).attr('href');
+    u(to).first().scrollIntoView({behavior: "smooth"});
+    e.preventDefault();
+    history.replaceState(null, '', to);
+  } catch(err) {}
+});
+
+u([window]).on('scroll', function(){
+  var top = this.scrollY || document.documentElement.scrollTop;
+  u('.top').toggleClass('visible', top > 1000);
+}).trigger('scroll');</script><script>window.onload = function(){
+
+  // Dropimage handler
+  [].forEach.call(document.querySelectorAll('.dropimage'), function(img){
+    img.onchange = function(e){
+      var inputfile = this, reader = new FileReader();
+      reader.onloadend = function(){
+        inputfile.style['background-image'] = 'url('+reader.result+')';
+        }
+      reader.readAsDataURL(e.target.files[0]);
+      }
+    });
+  };
+</script>
+</body>
+</html>

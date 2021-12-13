@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<title>LOCALADVERTS - Вход с помощью Google аккаунта и One Tap</title>
+<meta charset="utf-8"><meta name="theme-color" content="#317EFB"/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="keywords" content="логин,email,кабинет,вход,регистрация,пользоатель,google,пароль,Харьков,Украина">
+<meta name="description" content="локаладвертс сайт частных объявлений города Харьков"><link rel="stylesheet" href="/assets/style/style.css">
+<meta name="google-signin-client_id" content="{{ .gclientid }}.apps.googleusercontent.com">
+<link rel="icon" href="/assets/img/basket.png" type="image/png">
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "url": "https://local-adverts.site/",
+    "sameAs": "https://www.local-adverts.site/",
+    "alternateName": "локаладвертс сайт",
+    "image": "https://local-adverts.site/assets/img/basket.png",
+    "thumbnailUrl": "https://local-adverts.site/assets/img/basket.png",
+    "dateCreated": "2021-09-21 12:00:00",
+    "dateModified": "2021-10-21 07:57:00",
+    "locationCreated": {
+      "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Kharkiv",
+        "addressRegion": "KH",
+        "addressCountry": "UA"
+      }
+    },
+    "educationalLevel": "beginner",
+    "accessMode": ["textual", "visual"],
+    "abstract": "Classified free publication advert for private persons",
+    "inLanguage":"ru,ua",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://local-adverts.site/index.html?q={query}",
+      "query": "required"
+    },
+    "interactionStatistic": {
+        "@type": "InteractionCounter",
+        "interactionType": "https://schema.org/WatchAction",
+        "userInteractionCount": "3"
+    },
+    "contactPoint" : []
+}
+</script>
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+</head>
+<body>
+  <nav>
+    <a href="/index.html" class="brand" hreflang="ru"><span>LOCALADVERTS</span></a>
+    <input id="bmenu" type="checkbox" class="show"><label for="bmenu" class="burger toggle pseudo button">Открыть меню</label>
+    <div class="menu">
+      <a href="/index.html" class="pseudo button">На главную</a>
+      <a href="/publication.html#form" target="_self" class="button success">Разместить</a>
+      <a href="/publication.html#about" target="_self" class="button">О сайте</a>
+      <a href="/support.html#form" target="_self" class="button">Поддержка</a>
+    </div>
+  </nav>
+<main class="intro test">
+
+<div id="form" class="visual flex one two-800">
+  <div class="content">
+    <h2 title="вы сможете совершенно бесплатно использовать свой личный кабинет для управления объявлениями, ускоренной подачей объявлений и разными дополнительными функциями с помощью вашей электронной почты Gmail от Google">Вход с аккаунтом Google <a href="https://blog.google/technology/safety-security/a-simpler-and-safer-future-without-passwords/" target="_blank" rel="nofollow noopener">OneTap</a></h2>
+    <p>Введите свою электронную почту от Gmail (если у вас есть Android смартфон то почту можно узнать в вашем смартфоне в меню Настройка/Аккаунты. Найдите - почта с окончанием gmail.com.</p>
+    <p><a href="https://www.google.com/account/about/?hl=uk" title="Вы можете создать свой Google аккаунт и использовать его бесплатные, безопасные огромные возможности от электронной почты, YouTube возможностей и заработка, оплаты электронным кошельком... до создании собственных облачных высокопроизводительных вычислений, бесплатного самообразования, использовании его в вашем смартфоне и в повседневной жизни" target="_blank" target="_blank" rel="nofollow noopener" hreflang="ru">Регистрация Google и YouTube аккаунта</a></p>
+    <p>
+      Зайдя с помощью Google<sup><a target="_blank" href="https://about.google/" title="Google, Inc. and its affiliated companies" target="_blank" rel="nofollow noopener" hreflang="ru">©</a></sup> аккаунта, сайт создаст для вас логин и пароль и вышлет его вам на ваш указанную gmail почту. Вы сможете заходить на сайт как с помощью <a href="/auth/login.html" title="Откроется страница для ввода логина и пароля" target="_blank" rel="nofollow noopener" hreflang="ru">логина-пароля</a> так и с помощью Gmail google аккаунта.
+    </p>
+  </div>
+  <div class="content">
+    <div>
+        <div>
+<!--           <div id="g_id_onload"
+               data-client_id="{{ .gclientid }}"
+               data-login_uri="https://{{ .Fqdn }}/auth/googleuser.html">
+          </div> -->
+          <!-- <div class="g-signin2" data-onsuccess="onSignIn"></div> -->
+
+            <fieldset class="flex one">
+              <a class="button" aria-label="Войти c логином google пока недоступно" title="Пока не доступно. Попробуйте позже." href="#" target="_self">Google account - coming soon. Sorry</a>
+              <a class="button success" aria-label="Войти c логином паролем от этого сайта" title="Пока не доступно. Попробуйте позже." href="/auth/login.html" target="_self">Войти c логином паролем</a>
+              <a class="pseudo button warning" aria-label="Вернутся на главную" href="/index.html">Уйти</a>
+            </fieldset>
+        </div>
+    </div>
+  </div>
+</div>
+</main>
+</body></html>

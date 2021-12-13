@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<title>LOCALADVERTS - Публикация бесплатного объявления без регистрации</title>
+<meta charset="utf-8"><meta name="theme-color" content="#317EFB"/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preload" href="/assets/style/style.css" as="style">
+<link rel="prefetch" as="font" href="/assets/style/font/fontello.woff" type="font/woff2">
+<meta name="description" content="локаладвертс сайт - публикация бесплатного объявления без регистрации">
+<meta name="keywords" content="объявления, разместить, бесплатно, Харьков, Украина, купить, рубрика, категория, аренда, авто, велосипед, спорт, услуги, мастера, компьютер, мебель, ремонт">
+<meta name="description" content="локаладвертс сайт частных объявлений города Харьков">
+<link rel="stylesheet" href="/assets/style/style.css">
+<link rel="icon" href="/assets/img/basket.png" type="image/png">
+<script type="application/ld+json">
+{
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "LOCALADVERTS",
+        "alternateName": "локаладвертс сайт",
+        "description":"локаладвертс сайт - публикация бесплатного объявления без регистрации",
+        "url": "https://local-adverts.site/",
+        "sameAs": "https://www.local-adverts.site/",
+        "image": "https://local-adverts.site/assets/img/basket.png",
+        "thumbnailUrl": "https://local-adverts.site/assets/img/basket.png",
+        "dateCreated": "2021-09-21 12:00:00",
+        "dateModified": "2021-10-21 07:57:00",
+        "isAccessibleForFree": true,
+        "abstract": "Classified free publication advert for private persons",
+        "keywords":"объявления, разместить, бесплатно, Харьков, Украина, купить, рубрика, категория, аренда, авто, велосипед, спорт, услуги, мастера, компьютер, мебель, ремонт",
+        "locationCreated": {
+          "@type": "Place",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Kharkiv",
+            "addressRegion": "KH",
+            "addressCountry": "UA"
+          }
+         },
+        "educationalLevel": "beginner",
+        "accessMode": ["textual", "visual"],
+        "inLanguage":"ru,ua",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://local-adverts.site/index.html?q={query}",
+          "query-input": "required name=query",
+          "query": "required"
+        },
+        "interactionStatistic": {
+            "@type": "InteractionCounter",
+            "interactionType": "https://schema.org/WatchAction",
+            "userInteractionCount": "3"
+        }
+    }
+</script>
+</head>
+<body>
+  <nav>
+    <a href="/index.html" class="brand" hreflang="ru"><span>LOCALADVERTS</span></a>
+    <input id="bmenu" type="checkbox" class="show"><label for="bmenu" class="burger toggle pseudo button">Открыть меню</label>
+    <div class="menu">
+      <a href="/index.html" class="pseudo button">На главную</a>
+      <a href="/publication.html#about" target="_self" class="button">О сайте</a>
+      <a href="/support.html#form" target="_self" class="button">Поддержка</a>
+      <a href="/auth/login.html#form" class="button icon-paper-plane">Вход</a>
+    </div>
+  </nav>
+<main class="intro test">
+
+<div id="form" class="visual flex one two-800" vocab="https://schema.org/" typeof="Service">
+  <meta property="serviceType" content="Publication the private persons advert" />
+  <div class="content">
+    <h2><span property="name">Подать объявление бесплатно</span></h2>
+    <p>Всего три элементарных шага: описать пользователя, объявление, фотографии и номер телефона.</p>
+    <p><span property="slogan">Авито<sup><small><a target="_blank" href="https://avito.ru/" title="Авито — сайт объявлений России. ©" hreflang="ru">©</a></small></sup> и Twitter<sup><a target="_blank" href="https://twitter.com/" title="© 2021 Twitter, Inc." hreflang="en">©</a></sup> отдыхают!</span></p>
+    <p>В объявлении публикуются текст вашего объявления, имя, рубрика, фотографии и дата публикации. Для  пользователей вошедших с помощью Google<sup><a target="_blank" href="https://about.google/" title="Google, Inc. and its affiliated companies" hreflang="en">©</a></sup> аккаунта не требуется подтверждать свою электронную почту.</p>
+  </div>
+  
+  <div>
+    <form id="quickadvert" method="post" enctype="multipart/form-data" action="/publication.html" target="_self">
+    </form><!-- form#quickadvert -->
+
+    <div style="text-align: center;" class="tabs three">
+      <input id="tabC-1" type="radio" name="tabgroupC" checked="checked" aria-hidden="true">
+      <label for="tabC-1" class="pseudo button toggle">1</label><span> /</span><input id="tabC-2" type="radio" name="tabgroupC" aria-hidden="true"><label for="tabC-2" class="pseudo button toggle">2</label><span> /</span><input id="tabC-3" type="radio" name="tabgroupC" aria-hidden="true"><label for="tabC-3" class="pseudo button toggle">3</label>
+      <div class="row">
+        <div class="card">
+          <!-- <header><h3>Пользователь</h3></header> -->
+          <section>
+            Я регистрируюсь как
+          </section>
+          <section>
+            <fieldset class="flex one-400 two-500">
+              <label>Имя<input type="text" name="given-name" form="quickadvert" autofocus="autofocus" placeholder="Как к вам обращаться?" minlength="2" maxlength="64" pattern="[a-zA-Zа-яёА-ЯЁїЇіІґҐ\s-]{2,64}" 
+                {{if ne .user.Name "" }} value="{{.user.Name}}" readonly {{end}}
+                title="Имя человека для опубликации объявлений от вашего имени" required="required" autocomplete="given-name" autofocus="autofocus"></label>
+              <label>E-mail<input type="email" name="email" form="quickadvert" placeholder="Электронная почта" title="E-mail для уведомлений по вашим объявлениям" 
+                {{if ne .user.Email "" }} value="{{.user.Email}}" readonly {{end}}
+                maxlength="64" pattern="[_a-zA-Z0-9/.]{2,60}@[-a-zA-Z0-9]{2,56}[\.]{1}[a-zA-Z]{2,6}" required="required" autocomplete="email"></label>
+            </fieldset>
+          </section>
+          <section>
+            Размещаю объявление для жителей
+          </section>
+          <section>
+            <!-- <fieldset class="flex three" style="font-size: 0.9em;">
+              <label><input type="text" placeholder="Область" autofocus="autofocus" maxlength=32 minlength="2" title="Район в области" value="Харьковская обл." disabled></label>
+              <label><input type="text" placeholder="Район области" autofocus="autofocus" maxlength=32 minlength="2" title="Район в области" value="Харьковский р-н" disabled></label>
+              <label><input type="text" placeholder="Населён. пункт" title="Локация по вашим объявлениям" value="г. Харьков" disabled></label>
+            </fieldset> -->
+            <p class="links">
+            <a href="#  ">Харьковская обл.</a><span> | </span><a href="#">Город</a>
+            <span> | </span>
+            <a href="#">Харьков</a>
+            </p>
+          </section>
+          <section>
+           и соглашаюсь с <a href="#about" target="_self" hreflang="ru">назначением</a> и <a href="/agreement.html" target="_blank"><strong data-tooltip="использования сайта и ограничения" hreflang="ru">соглашением об использовании сайта</strong></a>
+          </section>
+          <footer>
+            <label for="tabC-2" class="button">Соглашаюсь</label>
+          </footer>
+        </div>
+        <div class="card">
+          <section>
+            <fieldset class="flex one-400 two-500">
+              <label>Категория:<select title="категории пользователей" name="category_id" form="quickadvert">
+              <option selected="selected">Выбрать...</option>
+              {{ range .categories }}
+              <option value="{{ .CategoryId }}">{{ .Path }}</option>
+              {{ else }}
+              <option value="" disable>Ошибка. Обратитесь в поддержку</option>
+              {{ end }}
+            </select></label>
+              <label>Цена в гривне<input type="number" name="price" form="quickadvert" title="К примеру: 123 (грн)" placeholder="Пример: 100"></label>
+            </fieldset>
+            <textarea name="nanopost" form="quickadvert" placeholder="Текст объявления (от 12 до 512 символов)" rows="6" minlength="12" maxlength="512" spellcheck="true" required="required"></textarea>
+            <label>телефон добавите на следующем шаге</label>
+          </section>
+          <footer>
+            <label for="tabC-3" class="button">Вперёд</label>
+            <label for="tabC-1" class="button dangerous">Назад</label>
+          </footer>
+        </div>
+    <div class="card">
+      <section>
+        <div class="flex two four-500 gallery">
+          <div>
+            <article data-tooltip="Выбор фото .jpeg .jpg" class="tooltip-bottom">
+              <label class="dropimage">1-я фото
+                <input type="file" name="picture1" form="quickadvert" accept="image/jpeg" required="required">
+              </label>
+            </article>
+          </div>
+          <div>
+              <article data-tooltip="Выбор фото .jpeg .jpg" class="tooltip-bottom">
+                <label style="background-image: url(/assets/img/optimised.svg)" class="dropimage">2-я фото
+                <input type="file" name="picture2" form="quickadvert" accept="image/jpeg">
+              </label>
+            </article>
+          </div>
+          <div>
+            <article data-tooltip="Выбор фото .jpeg .jpg" class="tooltip-bottom">
+              <label style="background-image: url(/assets/img/optimised.svg)" class="dropimage">3-я фото
+                <input type="file" name="picture3" form="quickadvert" accept="image/jpeg">
+              </label>
+            </article>
+          </div>
+          <div>
+            <article data-tooltip="Выбор фото .jpeg .jpg" class="tooltip-bottom">
+              <label style="background-image: url(/assets/img/optimised.svg)" class="dropimage">4-я фото
+               <!--  <input type="file" name="picture4" form="quickadvert" accept="image/jpeg" 
+                title="Доступно после оплаты премиум аккаунта" disabled> -->
+                <input type="file" name="picture4" form="quickadvert" accept="image/jpeg" 
+                title="Доступно вам как обладателю премиум услуг">
+              </label>
+            </article>
+         </div>
+      </section>
+      <section>
+        <label>Телефон:
+        <input type="tel" name="tel" form="quickadvert" title="Телефон для связи" aria-label="tel" pattern="[\d\s\-\+\(\)]{10,21}" 
+                {{if ne .user.Tel "" }} value="{{.user.Tel}}" readonly {{end}}
+        placeholder="(555) 555-5555" autocomplete="tel" required="required">
+        </label>
+      </section>
+          <footer>
+            <button type="submit" form="quickadvert" class="success">Опубликовать</button>
+            <label for="tabC-2" class="button dangerous">Вернутся</label>
+          </footer>
+      </div><!-- .card -->
+      </div><!-- .row -->
+    </div><!-- .tabs .three -->
+  </div>
+  <!-- </div> -->
+
+  <div id="about" class="visual flex one two-800">
+  <div class="content">
+    <!-- <a class="anchor-link" href="/publication.html#about" target="_self" rel=" noreferrer nofollow">¶</a> -->
+    <h2>О сайте</h2>
+    <p>
+      Сайт бесплатных объявлений продуман для быстрого, удобного и эффективного использования. <a target="_self" href="#form">Подача объявления</a> не займет более трех минут.
+    </p>
+    <p>
+      Так же мы профессионально, ответственно и добропорядочно относимся к обращению, защите наших данных.
+    </p>
+    <p>Спам и нецелевое <a href="/agreement.html" target="_blank" title="Соглашение об использовании сайта" hreflang="ru">использование сайта</a> будет пресекаться всеми законными способами и технологиями. Работает <a href="/support.html#form" target="_self" title="Форма для обращение в техподдржку сайта" hreflang="ru">поддержка</a>.
+    </p>
+  </div>
+  <div class="content">
+    <h2>На сайте можно</h2>
+    <p>
+      <ul>
+       <li title="за последний месяц и в остальных">искать объявления пользователей в категориях</li>
+       <li title="в разных рубриках">бесплатно подать до 5 объявлений</li>
+       <li>отправлять и читать сообщения авторам объявлений</li>
+       <li title="на e-mail почту">получать уведомления объявлений и переписки</li>
+       <li title="в будущем на платной основе">публиковать повторно (апать) более 1 раза в сутки после оплаты премиум услуг</li>
+       <li title="в будущем на платной основе">публиковать 4 фото в объявлении и дополнительное количество после оплаты премиум услуг</li>
+       <li title="в будущем">станет доступным прием оплат для премиум услуг</li>
+       <li title="в будущем">станет доступным поисковая оптимизация ваших объявлений на основе машинного обучения</li>
+      </ul>
+    </p>
+    <a href="#form" title="Форма для быстрой подачи объявления" class="button success" hreflang="ru">Подать объявление</a>
+    <a href="/support.html#form" target="_blank" class="button" hreflang="ru">Поддержка</a>
+  </div>
+</div>
+
+</div>
+</main>
+<script>
+  window.onload = function(){
+  // Dropimage handler
+  [].forEach.call(document.querySelectorAll('.dropimage'), function(img){
+    img.onchange = function(e){
+      var inputfile = this, reader = new FileReader();
+      reader.onloadend = function(){
+        inputfile.style['background-image'] = 'url('+reader.result+')';
+        }
+      reader.readAsDataURL(e.target.files[0]);
+      }
+    });
+  };
+</script>
+
+</body>
+</html>

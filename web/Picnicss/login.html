@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<title>LOCALADVERTS - Вход в личный кабинет</title>
+<meta charset="utf-8">
+<meta name="theme-color" content="#317EFB"/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="keywords" content="логин,email,кабинет,вход,регистрация,пользоатель,google,пароль,Харьков,Украина">
+<meta name="description" content="локаладвертс сайт частных объявлений города Харьков">
+<link rel="preload" href="/assets/style/style.css" as="style">
+<link rel="stylesheet" href="/assets/style/style.css">
+<link rel="icon" href="/assets/img/basket.png" type="image/png">
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "url": "https://local-adverts.site/",
+    "sameAs": "https://www.local-adverts.site/",
+    "alternateName": "локаладвертс",
+    "image": "https://local-adverts.site/assets/img/basket.png",
+    "thumbnailUrl": "https://local-adverts.site/assets/img/basket.png",
+    "dateCreated": "2021-09-21 12:00:00",
+    "dateModified": "2021-10-21 07:57:00",
+    "locationCreated": {
+      "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Kharkiv",
+        "addressRegion": "KH",
+        "addressCountry": "UA"
+      }
+    },
+    "educationalLevel": "beginner",
+    "accessMode": ["textual", "visual"],
+    "abstract": "Classified free publication advert for private persons",
+    "inLanguage":"ru,ua",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://local-adverts.site/index.html?q={query}",
+      "query": "required"
+    },
+    "interactionStatistic": {
+        "@type": "InteractionCounter",
+        "interactionType": "https://schema.org/WatchAction",
+        "userInteractionCount": "3"
+    },
+    "contactPoint" : []
+}
+</script>
+</head>
+<body>
+  <nav>
+    <a href="/index.html" class="brand" hreflang="ru"><span>LOCALADVERTS</span></a>
+    <input id="bmenu" type="checkbox" class="show"><label for="bmenu" class="burger toggle pseudo button">Открыть меню</label>
+    <div class="menu">
+      <a href="/index.html" class="pseudo button">На главную</a>
+      <a href="/publication.html#form" target="_self" class="button success">Разместить</a>
+      <a href="/publication.html#about" target="_self" class="button">О сайте</a>
+      <a href="/support.html#form" target="_self" class="button">Поддержка</a>
+    </div>
+  </nav>
+<main class="intro test">
+
+<div id="form" class="visual flex one two-800">
+  <div class="content">
+    <h2>Вход на сайт</h2>
+    <p>Введите свою электронную почту которую указывали при подаче объявлений или <a href="/auth/signup.html#form" title="Регистрируясь вы сможете совершенно бесплатно использовать свой личный кабинет для управления объявлениями и не только" hreflang="ru">регистрации</a>.</p>
+    <p>
+      Вы можете войти в свой кабинет с помощью Google<sup><a target="_blank" href="https://about.google/" title="Google, Inc. and its affiliated companies" hreflang="ru">©</a></sup> аккаунта, что более предпочтительно <a href="/auth/googleuser.html" hreflang="ru">по ссылке</a>.
+    </p>
+  </div>
+  <div class="content">
+    <div>
+        <div>
+          <form method="post" action="/auth/login.html" target="_self">
+            <fieldset class="flex one">
+              <label id="emailLabel">E-mail
+                <input type="email" name="username" title="Логин это ваш e-mail если вы указывали его при подаче объявлений" placeholder="Ваш e-mail*" pattern="[_a-zA-Z0-9/.]{2,60}@[a-zA-Z0-9]{2,56}.[a-zA-Z]{2,6}" required="required" autocomplete="email" aria-labelledby="emailLabel" autofocus="autofocus">
+              </label>
+              <label id="passLabel">Пароль
+                <input type="password" name="current-password" placeholder="Пароль" required="required" aria-labelledby="passLabel" autocomplete="current-password">
+              </label>
+            </fieldset>
+            <footer>
+              <button type="submit" class="success" aria-label="Войти">Войти</button>
+              <button type="reset" class="warning" aria-label="Очистить поля формы">Очистить</button>
+            </footer>
+          </form>
+        </div>
+    </div>
+  </div>
+</div>
+
+</main>
+</body></html>

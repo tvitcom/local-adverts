@@ -1,0 +1,31 @@
+[Unit]
+Description=local-adverts website
+ConditionPathExists=/home/user/Go/src/github.com/tvitcom/local-adverts
+ConditionFileNotEmpty=/home/user/Go/src/github.com/tvitcom/local-adverts/server
+After=network.target
+
+[Service]
+Type=simple
+USER=user
+Group=www-data
+LimitNOFILE=1024
+
+Restart=on-failure
+RestartSec=10
+
+WorkingDirectory=/home/user/Go/src/github.com/tvitcom/local-adverts
+#AppArmorProfile=/etc/apparmor.d/no_raw_net
+#ExecStartPre=/sbin/apparmor_parser -r -W /etc/apparmor.d/no_raw_net
+ExecStart=/home/user/Go/src/github.com/tvitcom/local-adverts/server -config=configs/prod.yml
+
+# make sure log directory exists and owned by syslog
+PermissionsStartOnly=true
+ExecStartPre=/bin/mkdir -p /var/log/local-adverts
+ExecStartPre=/bin/chown syslog:adm /var/log/local-adverts
+ExecStartPre=/bin/chmod -R 755 /var/log/local-adverts
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=local-adverts
+
+[Install]
+WantedBy=multi-user.target

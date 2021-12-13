@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<title>LOCALADVERTS - Отправить сообщение автору опубликованного объявления</title>
+<meta charset="utf-8"><meta name="theme-color" content="#317EFB"/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="keywords" content="сообщение,автору,форма,отправка,уведомление,email,подтверждение,спамер,google,recaptcha">
+<meta name="description" content="страница отправки сообщения автору бесплатного объявления и уведомление его по email">
+<link rel="preload" href="/assets/style/style.css" as="style">
+<link rel="stylesheet" href="/assets/style/style.css">
+<link rel="icon" href="/assets/img/basket.png" type="image/png">
+<script type="application/ld+json">
+{
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "url": "https://local-adverts.site/",
+        "sameAs": "https://www.local-adverts.site/",
+        "alternateName": "локаладвертс",
+        "image": "https://local-adverts.site/assets/img/basket.png",
+        "thumbnailUrl": "https://local-adverts.site/assets/img/basket.png",
+        "dateCreated": "2021-09-21 12:00:00",
+        "dateModified": "2021-10-21 07:57:00",
+        "locationCreated": {
+          "@type": "Place",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Kharkiv",
+            "addressRegion": "KH",
+            "addressCountry": "UA"
+          }
+         },
+        "educationalLevel": "beginner",
+        "accessMode": ["textual", "visual"],
+        "abstract": "Classified free publication advert for private persons",
+        "inLanguage":"ru,ua",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://local-adverts.site/index.html?q={query}",
+          "query-input": "required name=query",
+          "query": "required"
+        },
+        "interactionStatistic": {
+            "@type": "InteractionCounter",
+            "interactionType": "https://schema.org/WatchAction",
+            "userInteractionCount": "3"
+        },
+        "contactPoint" : []
+    }
+</script>
+</head>
+<body>
+  <nav>
+    <a href="/index.html" class="brand" hreflang="ru"><span>LOCALADVERTS</span></a>
+    <input id="bmenu" type="checkbox" class="show"><label for="bmenu" class="burger toggle pseudo button">Открыть меню</label>
+    <div class="menu">
+      <a href="/index.html" class="pseudo button">На главную</a>
+      <a href="/publication.html#about" target="_self" class="button">О сайте</a>
+      <a href="/support.html#form" target="_self" class="button">Поддержка</a>
+      <a href="/auth/login.html#form" class="button icon-paper-plane">Вход</a>
+    </div>
+  </nav>
+<main class="intro test">
+
+<div id="form" class="visual flex one two-800">
+  <div class="content">
+    <h2>Отправить сообщение автору{{ if ne .advertsuser.Name ""}} {{ .advertsuser.Name }} {{ end }}</h2>
+    <p>Отправить сообщение автору легко - напишите свой обратный адрес для ответа и сообщение. Ну и конечноже подтвердите что вы не бот и не спамер с помощью <a target="_blank" title="Откроется вкладка в браузере и почитаете об этом" href="https://www.google.com/recaptcha/about/" hreflang="ru">Google Recaptcha</a></p>
+    <p>Сайт не гарантирует что автор вам ответит. Мы можем обеспечить отправку ему сообщения от вас и уведомление для него если он не на сайте.
+    </p>
+  </div>
+  <div class="content">
+    <div>
+      <form method="post" enctype="multipart/form-data" action="/message.html" target="_self">
+        <input type="hidden" name="advert-id" value="{{ .aid }}">
+      <div>
+        <fieldset class="flex two">
+          <label>E-mail<input type="email" name="email" title="Желательно тотже e-mail что и зарегистрирован на нашем сайте - тогда вам станет удобнее общаться с людьми на сайте" placeholder="E-mail" pattern="^[-_a-zA-Z0-9/.]{2,60}@[-a-zA-Z0-9]{2,56}[\.]{1}[a-zA-Z]{2,6}$" 
+          {{if ne .user.Email "" }} value="{{.user.Email}}" readonly {{end}}
+            required="required" autocomplete="email" autofocus="autofocus"></label>
+          <label>Имя<input type="text" placeholder="Ваше имя" name="given-name" 
+          {{if ne .user.Name "" }} value="{{.user.Name}}" readonly {{end}}
+            minlength="2" maxlength="64" pattern="[a-zA-Zа-яёА-ЯЁїЇіІґҐ\s\.\,\-]{2,64}" required="required"></label>
+        </fieldset>
+        <textarea name="msg" placeholder="Сообщение" title="Пожалуйста, пишите не более 200 символов. Спасибо"  maxlength="512" minlength="12" spellcheck="true" required="required">Здраствуйте {{ if ne .advertsuser.Name ""}} {{ .advertsuser.Name }}, {{ else }}{{ end }}</textarea>
+        <p>
+        <footer>
+          <section>
+           Вы соглашаетесь с <a href="/publication.html#about" target="_blank" hreflang="ru">назначением сайта</a> и <a href="/agreement.html" target="_blank"><strong data-tooltip="использования сайта и ограничения" hreflang="ru">соглашенем об использовании</strong></a>
+          </section>
+            <input type="submit" class="success" value="Отправить">
+        </footer>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+</main>
+<script>
+  window.onload = function(){
+
+  // Dropimage handler
+  [].forEach.call(document.querySelectorAll('.dropimage'), function(img){
+    img.onchange = function(e){
+      var inputfile = this, reader = new FileReader();
+      reader.onloadend = function(){
+        inputfile.style['background-image'] = 'url('+reader.result+')';
+        }
+      reader.readAsDataURL(e.target.files[0]);
+      }
+    });
+  };
+</script></body></html>

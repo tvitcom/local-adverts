@@ -1,0 +1,77 @@
+## common files
+*.fiber.gz
+/web/assets/Picnicss/*.fiber.gz
+/web/assets/media/bkp/*
+*.tar.gz
+/local-adverts
+/vendor
+/main.go
+123.*
+old-*
+_old_*
+old_*
+*.swp
+*.pem*
+*/*.swp
+*/_old*
+/go.sum
+.*
+!.gitignore
+*~
+!/main.go
+/favicon.ico
+
+# Project specific
+.idea
+*.sublime-project
+*.sublime-workspace
+go.sum
+
+# Binaries for programs and plugins
+/main
+/cmd/server/main
+*.log*
+*.exe*
+*.dll
+*.so
+*.dylib
+.pid
+
+## secured files
+/info/*
+!/info/ROUTES.txt
+/build/*
+!/build/.gitignore
+/deploy.conf*
+/GPDR_POLICY.txt*
+/assets/acmesite/acme-challenge/*
+!/assets/acmesite/acme-challenge/test.html
+/web/assets/support
+!/web/assets/support/.gitignore
+/assets/uploaded/
+!/assets/uploaded/index.html
+/web/assets/userpic/*
+!/web/assets/userpic/index.html
+/web/assets/media/*
+!/web/assets/media/index.html
+
+# Test binary, built with `go test -c`
+*.test
+
+# Test coverage output
+coverage*.*
+*.out
+
+# postgres data volume used by postgres server container for testing purpose
+testdata/postgres
+
+# server binary
+./server
+
+# PID file generated to support live reload
+.pid
+
+# Secrets and credentials
+/configs/*
+!/configs/_dev.yml
+

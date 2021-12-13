@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<title>LOCALADVERTS - Поддержка пользователей и форма отправки сообщения</title>
+<meta charset="utf-8"><meta name="theme-color" content="#317EFB"/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="keywords" content="форма,отправка,сообщение,пожелание,техподдержка,решить,типичные,проблемы,пользователей">
+<meta name="description" content="локаладвертс сайт - форма поддержки пользователей сайта частных объявлений города Харьков">
+<link rel="preload" href="/assets/style/style.css" as="style">
+<link rel="stylesheet" href="/assets/style/style.css">
+<link rel="icon" href="/assets/img/basket.png" type="image/png">
+<script type="application/ld+json">
+{
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "url": "https://local-adverts.site/",
+        "sameAs": "https://www.local-adverts.site/",
+        "alternateName": "локаладвертс",
+        "image": "https://local-adverts.site/assets/img/basket.png",
+        "thumbnailUrl": "https://local-adverts.site/assets/img/basket.png",
+        "dateCreated": "2021-09-21 12:00:00",
+        "dateModified": "2021-10-21 07:57:00",
+        "locationCreated": {
+          "@type": "Place",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Kharkiv",
+            "addressRegion": "KH",
+            "addressCountry": "UA"
+          }
+         },
+        "educationalLevel": "beginner",
+        "accessMode": ["textual", "visual"],
+        "abstract": "Classified free publication advert for private persons",
+        "inLanguage":"ru,ua",
+                "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://local-adverts.site/index.html?q={query}",
+          "query-input": "required name=query",
+          "query": "required"
+        },
+        "interactionStatistic": {
+            "@type": "InteractionCounter",
+            "interactionType": "https://schema.org/WatchAction",
+            "userInteractionCount": "3"
+        },
+        "contactPoint" : []
+    }
+</script>
+</head>
+<body>
+  <nav>
+    <a href="/index.html" class="brand" hreflang="ru"><span>LOCALADVERTS</span></a>
+    <input id="bmenu" type="checkbox" class="show"><label for="bmenu" class="burger toggle pseudo button">Открыть меню</label>
+    <div class="menu">
+      <a href="/index.html" class="pseudo button">На главную</a>
+      <a href="/publication.html#form" target="_self" class="button success">Разместить</a>
+      <a href="/publication.html#about" target="_self" class="button">О сайте</a>
+      <a href="/auth/login.html#form" class="button icon-paper-plane">Вход</a>
+    </div>
+  </nav>
+<main class="intro test">
+
+<div id="form" class="visual flex one two-800">
+  <div class="content">
+    <h2>Поддержка пользователей</h2>
+    <p>Опишите ситуацию на сайте, прикрепите фото (если вы смогли сделать скриншоты) и мы внимательно изучим и поможем решить нашу проблему в ближайшее время.</p>
+    <p>Типичные проблемы: 
+      <ul>
+        <li>с сайтом и доступом</li>
+        <li>с аккаунтом</li>
+        <li>с другим пользователем (в том числе жалобы)</li>
+        <li>предложение по работе сайта</li>
+      </ul>
+    </p>
+  </div>
+  <div class="content">
+    <div>
+      <form method="post" enctype="multipart/form-data" action="/support.html" target="_self">
+        <input type="hidden" name="subject" value="{{ .subject }}">
+      <div>
+        <fieldset class="flex one-400 two-500">
+          <label>E-mail<input type="email" name="email" title="Желательно тот же e-mail что и зарегистрирован на нашем сайте" placeholder="Электронная почта" pattern="^[-_a-zA-Z0-9/.]{2,60}@[-a-zA-Z0-9]{2,56}[\.]{1}[a-zA-Z]{2,6}$" 
+          {{if ne .user.Email "" }} value="{{.user.Email}}" readonly {{end}}
+            required="required" autocomplete="email"  accesskey="e" autofocus="autofocus"></label>
+          <label>Имя<input type="text" placeholder="Ваше имя" name="given-name" 
+          {{if ne .user.Name "" }} value="{{.user.Name}}" readonly {{end}}
+            minlength="2" maxlength="64" accesskey="n" required="required"></label>
+        </fieldset>
+        <label>Обращение
+        <textarea name="msg" placeholder="Сообщение" title="В форме: что-где-когда и после чего происходит. Заранее благодарим"  maxlength="512" minlength="12" spellcheck="true" accesskey="m" required="required">{{ if ne .advid "0" }} Обращение по поводу объявления №{{ .advid  }}.{{ else }} Добрый день, {{ end }}
+        </textarea></label>
+        <p>
+        <section>
+          <div class="flex three gallery">
+            <div>
+              <article data-tooltip="Нажатие откроет выбор фотографий для загрузки .jpeg .jpg" class="tooltip-bottom">
+                <label class="dropimage">
+                  <input type="file" name="picture1" accept="image/jpeg" accesskey="a" >
+                </label>
+              </article>
+            </div>
+            <div>
+                <article data-tooltip="Нажатие откроет выбор фотографий для загрузки .jpeg .jpg" class="tooltip-bottom">
+                  <label class="dropimage">
+                  <input type="file" name="picture2" accept="image/jpeg" accesskey="b">
+                </label>
+              </article>
+            </div>
+            <div>
+              <article data-tooltip="Нажатие откроет выбор фотографий для загрузки .jpeg .jpg" class="tooltip-bottom">
+                <label class="dropimage">
+                  <input type="file" name="picture3" accept="image/jpeg" accesskey="c">
+                </label>
+              </article>
+            </div>
+          </div>
+        </section>
+        <section>
+           Вы соглашаетесь с <a href="/publication.html#about" target="_self" accesskey="d">назначением сайта</a> и <a href="/agreement.html" target="_blank" accesskey="f"><strong data-tooltip="использования сайта и ограничения">соглашенем об использовании</strong></a>
+        </section>
+        <footer>
+            <input type="submit" class="success" accesskey="s" value="Отправить">
+        </footer>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+</main>
+<script>
+  window.onload = function(){
+
+  // Dropimage handler
+  [].forEach.call(document.querySelectorAll('.dropimage'), function(img){
+    img.onchange = function(e){
+      var inputfile = this, reader = new FileReader();
+      reader.onloadend = function(){
+        inputfile.style['background-image'] = 'url('+reader.result+')';
+        }
+      reader.readAsDataURL(e.target.files[0]);
+      }
+    });
+  };
+</script></body></html>

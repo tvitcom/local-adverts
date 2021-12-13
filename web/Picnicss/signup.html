@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<title>LOCALADVERTS - Регистрация пользователя</title>
+<meta charset="utf-8">
+<meta name="theme-color" content="#317EFB"/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="keywords" content="объявления, разместить, бесплатно, Харьков, Украина, купить, рубрика, категория, аренда, авто, велосипед, спорт, услуги, мастера, компьютер, мебель, ремонт">
+<meta name="description" content="локаладвертс сайт частных объявлений города Харьков">
+<link rel="preload" href="/assets/style/style.css" as="style">
+<link rel="stylesheet" href="/assets/style/style.css">
+<link rel="icon" href="/assets/img/basket.png" type="image/png">
+<style>
+.miniprofile {
+  border-radius: 50%;    /* Make it a circle */
+  margin: 0 auto;        /* Center horizontally */
+  width: 60%;            /* 60% width */
+  padding-bottom: 60%;   /* 60% height */
+}
+</style>
+<script type="application/ld+json">
+{
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "url": "https://local-adverts.site/",
+        "sameAs": "https://www.local-adverts.site/",
+        "alternateName": "локаладвертс",
+        "image": "https://local-adverts.site/assets/img/basket.png",
+        "thumbnailUrl": "https://local-adverts.site/assets/img/basket.png",
+        "dateCreated": "2021-09-21 12:00:00",
+        "dateModified": "2021-10-21 07:57:00",
+        "locationCreated": {
+          "@type": "Place",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Kharkiv",
+            "addressRegion": "KH",
+            "addressCountry": "UA"
+          }
+         },
+        "educationalLevel": "beginner",
+        "accessMode": ["textual", "visual"],
+        "abstract": "Classified free publication advert for private persons",
+        "inLanguage":"ru,ua",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://local-adverts.site/index.html?q={query}",
+          "query-input": "required name=query",
+          "query": "required"
+        },
+        "interactionStatistic": {
+            "@type": "InteractionCounter",
+            "interactionType": "https://schema.org/WatchAction",
+            "userInteractionCount": "3"
+        },
+        "contactPoint" : []
+    }
+</script>
+</head>
+<body>
+  <nav>
+    <a href="/index.html" class="brand" hreflang="ru"><span>LOCALADVERTS</span></a>
+    <input id="bmenu" type="checkbox" class="show"><label for="bmenu" class="burger toggle pseudo button">Открыть меню</label>
+    <div class="menu">
+      <a href="/index.html" class="pseudo button">На главную</a>
+      <a href="/publication.html#form" target="_self" class="button success">Разместить</a>
+      <a href="/publication.html#about" target="_self" class="button">О сайте</a>
+      <a href="/support.html#form" target="_self" class="button">Поддержка</a>
+      <!-- <a href="/auth/login.html#form" class="button icon-paper-plane">Вход</a> -->
+    </div>
+  </nav>
+<main class="intro test">
+
+<div id="form" class="visual flex one two-800">
+  <div class="content">
+    <h2>Регистрация пользователя</h2>
+    <p>Вы можете войти с помощью Google<sup><a href="https://about.google/" title="Google, Inc. and its affiliated companies" target="_blank">©</a></sup> <a title="откроется страница Google логина" href="/auth/googleuser.html">аккаунта</a> вместо регистрации или зарегистрироваться.
+    <p>Введите свое имя, электронную почту, фото и телефон для того что бы вы смогли экономить время а мы предлагать более качественную работу сайта</p>
+    <p>Поля с звёздочкой * необходимо заполнить.
+    <p>Запомните свой пароль и язык на котором его вводили или сохраните в браузере если это ваше устройство.
+  </div>
+  <div class="content">
+    <div>
+      <form method="post" enctype="multipart/form-data" action="/auth/signup.html" target="_self">
+      <!-- <div> -->
+        <fieldset class="flex two">
+          <label>E-mail<input type="email" name="email" title="Желательно тотже e-mail если вы указывали его при подаче объявлений" placeholder="E-mail*" pattern="^[_a-zA-Z0-9/.]{2,60}@[a-zA-Z0-9]{2,56}.[a-zA-Z]{2,6}$" required="required" autocomplete="email" autofocus="autofocus"></label>
+          <label>Имя<input type="text" name="given-name" title="будет указано при просмотре ваших объявлений другими пользователями сайта" placeholder="Ваше имя" pattern="[a-zA-Zа-яёА-ЯЁїЇіІґҐ\s\.\,\-\']{2,64}" minlength="2" maxlength="64" autocomplete="given-name"></label>
+        </fieldset>
+        <fieldset class="flex two">
+          <label>Пароль<input type="password" name="new-password" title="Придумайте пароль более 6 символов вида Zb&q9?va (к примеру Междунамитаетлёд в английской раскладке)" placeholder="Введите пароль*" maxlength="128" minlength="6" required="required"></label>
+          <label>Повтор пароля<input type="password" name="new-password-repeat" title="Введите еще раз - докажите что запомнили" placeholder="Повторите пароль*" maxlength="128" minlength="6" required="required"></label>
+        </fieldset>
+        <label>Телефон
+        <input type="tel" name="tel" placeholder="555-555-55-55" title="для того чтобы не вводить его при подаче объявлений" pattern="[\d\s\-\+\(\)]{10,21}" autocomplete="tel"></label>
+        <p>
+        <div style="width: 200px;margin-bottom:10px;">
+          <label class="dropimage miniprofile">
+            <input type="file" name="picture" title="Кликом выберите фото .jpg .jpeg .png" accept="image/jpeg">
+          </label>
+        </div>
+        <div>
+        <footer>
+            <button type="submit" title="После этого вы сможете подавать объявления гораздо быстрее" class="success">Отправить</button>
+            <button type="reset" class="warning">Очистить</button>
+        </footer>
+      </div>
+      <!-- </div> -->
+      </form>
+    </div>
+  </div>
+</div>
+
+</main>
+<script>
+  window.onload = function(){
+  // Dropimage handler
+  [].forEach.call(document.querySelectorAll('.dropimage'), function(img){
+    img.onchange = function(e){
+      var inputfile = this, reader = new FileReader();
+      reader.onloadend = function(){
+        inputfile.style['background-image'] = 'url('+reader.result+')';
+        }
+      reader.readAsDataURL(e.target.files[0]);
+      }
+    });
+  };
+</script>
+
+</body>
+</html>

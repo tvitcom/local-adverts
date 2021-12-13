@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<link rel= "dns-prefetch" href="https://www.google-analytics.com/">
+<link rel= "dns-prefetch" href="https://www.googletagmanager.com/">
+<link rel="preload" href="/assets/style/style.css" as="style">
+<link rel="preload" href="/assets/style/v6.0.0-beta3.css" as="style">
+<title>LOCALADVERTS - {{ .advert.Title }} (№{{ .advert.AdvertId }})</title>
+<meta charset="utf-8"><meta name="theme-color" content="#317EFB"/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="keywords" content="локаладвертс,сайт,объявление,содержание,написать,подаловаться,автор,GDPR,уведомление,политика,персональных,данных,конфиденциальность,куки,cookie,разрешение">
+<meta name="description" content="на локаладвертс сайте размещено объявление (№{{ .advert.AdvertId }}): {{ .advert.Title }}">
+<link rel="stylesheet" href="/assets/style/style.css">
+<link rel="stylesheet" href="/assets/style/v6.0.0-beta3.css">
+<link rel="font" href="/assets/webfonts/fa-brands-400.woff2">
+<link rel="font" href="/assets/webfonts/fa-brands-400.ttf">
+<link rel="icon" href="/assets/img/basket.png" type="image/png">
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script defer src="https://www.googletagmanager.com/gtag/js?id=G-AAAAAAAAAAA"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-AAAAAAAAAAA');
+</script>
+<script type="application/ld+json">
+{
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "url": "https://local-adverts.site/",
+        "sameAs": "https://www.local-adverts.site/",
+        "alternateName": "локаладвертс объявления",
+        "image": "https://local-adverts.site/assets/img/basket.png",
+        "thumbnailUrl": "https://local-adverts.site/assets/img/basket.png",
+        "dateCreated": "2021-09-21 12:00:00",
+        "dateModified": "2021-10-21 07:57:00",
+        "locationCreated": {
+          "@type": "Place",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Kharkiv",
+            "addressRegion": "KH",
+            "addressCountry": "UA"
+          }
+         },
+        "educationalLevel": "beginner",
+        "accessMode": ["textual", "visual"],
+        "abstract": "Classified free publication advert for private persons",
+        "inLanguage":"ru,ua",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://local-adverts.site/index.html?q={query}",
+          "query-input": "required name=query",
+          "query": "required"
+        },
+        "interactionStatistic": {
+            "@type": "InteractionCounter",
+            "interactionType": "https://schema.org/WatchAction",
+            "userInteractionCount": "{{ .advert.AdvertId }}"
+        }
+    }
+</script>
+</head>
+<body>
+  <nav>
+    <a href="/index.html" class="brand" hreflang="ru"><span>LOCALADVERTS</span></a>
+    <input id="bmenu" type="checkbox" class="show"><label for="bmenu" class="burger toggle pseudo button">Открыть меню</label>
+    <div class="menu">
+      <a href="/index.html" class="pseudo button">На главную</a>
+      <a href="/publication.html#form" target="_self" class="button success">Разместить</a>
+      <a href="/publication.html#about" target="_self" class="button">О сайте</a>
+      <a href="/auth/login.html#form" class="button icon-paper-plane">Вход</a>
+    </div>
+  </nav>
+<main class="intro test">
+<div id="content" class="visual flex one two-800">
+<div class="content">
+    <header>
+      <h1>{{ .advert.Title }}</h1>
+      <p>Цена: {{ .advert.Price }} грн&nbsp;&nbsp;&nbsp;<small>(Объявление №{{ .advert.AdvertId }})</small></p>
+    </header>
+    <p>{{ .advert.Nanopost }}</p>
+    <address>
+      Имя: <a href="/activity.html?uid={{ .advert.UserId }}#listing" title="Все объявления автора - {{ .user.Name }}">{{ .user.Name }}</a><br>
+    {{ if eq .uid 1 }}
+      Телефон: <a href="tel:{{ .user.Tel }}" title="Набрать номер для звонка">{{ .user.Tel }}</a><br>
+    {{ else }}
+      Телефон: <span id="hiddentel" style="font-color:orange;">[<i>нажмите кнопку Показать</i>]</span><br>
+    {{ end }}
+    </address>
+    {{ if ne .uid 1 }}
+    <p>
+      <form id="watchauthor" enctype="application/x-www-form-urlencoded" action="/watchauthor.html" method="POST">
+        <input type="hidden" name="advert_id" value="{{ .advert.AdvertId }}">
+        <!-- VERSION FOR LOCAL DEBUG  -->
+        <input id="submitwatchauthor" form="watchauthor" type="submit" title="Пройдите reCAPTCH проверку что вы не бот" class="button warning" value="Показать" onclick="onSubmit();">
+        
+        <!-- <input id="submit" form="watchauthor" type="submit" title="Пройзойдет reCAPTCH проверка что вы не бот" class="button warning" value="Показать"> -->
+        
+        <!-- <button class="g- r eca ptcha" data-sitekey="{{ .recaptcha_site_key }} title="Пройзойдет reCAPTCH проверка что вы не бот" data-callback='onSubmit'>Submit</button> -->
+
+        <!-- <a href="/message.html?advid={{ .advert.AdvertId }}#form" title="Написать сообщение автору - {{ .user.Name }}" class="button">Написать</a> -->
+        <a href="/support.html?advid={{ .advert.AdvertId }}#form" title="Форма для написания жалобы в техподдержку" class="pseudo button">Пожаловаться</a>
+      </form><!-- form#watchauthor -->
+    </p>
+    {{ else if eq .user.UserId .advert.UserId }}
+    <form id="deladvert" method="post" action="/my/deleteadvert.html" target="_self">
+      <input type="hidden" name="advert_id" value="{{ .advert.AdvertId }}">
+      <input type="submit" value="Полностью удалить">
+    </form>
+    {{ else }}
+    {{ end }}
+    <footer>
+      <div>
+        <h2><small>Делитесь с друзьями в мессенджерах</small></h2>
+        <a class="pseudo button" title="Отправить через Telegram" target="_blank" href="tg://share/url?url=https://{{ .fqdn }}/watch.html?advid={{.advert.AdvertId }}#content&text={{ .advert.Title }}_{{.advert.AdvertId }}"><i class="fa-brands fa-telegram"></i> Telegram</a>
+        <a class="pseudo button" title="Отправить через Viber" target="_blank" href="viber://forward?text={{ .advert.Title }}_{{.advert.AdvertId }}"><i class="fa-brands fa-viber"></i> Viber</a>
+        <a class="pseudo button" title="Отправить через WhatsApp" target="_blank" href="whatsapp://send?text=https://{{ .fqdn }}/watch.html?advid={{.advert.AdvertId }}#{{ .advert.Title }}_{{.advert.AdvertId }}"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+        <a class="pseudo button" title="Отправить через Instagram" target="_blank" href="instagram://tag?name=https://{{ .fqdn }}/watch.html?advid={{ .advert.AdvertId }}#content&text={{ .advert.Title }}_{{.advert.AdvertId }}"><i class="fa-brands fa-instagram"></i> Instagram</a>
+      </div>
+    </footer>
+</div>
+<div class="card">
+<div>
+<div class="tabs four">
+  <input id="tabC-1" type="radio" name="tabGroupC" checked="checked">
+  <input id="tabC-2" type="radio" name="tabGroupC">
+  <input id="tabC-3" type="radio" name="tabGroupC">
+  <input id="tabC-4" type="radio" name="tabGroupC">
+  <div class="row">
+    <div>
+      <img alt="Фотография 1 объявления" src="/media/{{ .advert.Picture1 }}">
+    </div>
+    <div>
+      <img alt="Фотография 2 объявления" src="/media/{{ .advert.Picture2 }}">
+    </div>
+    <div>
+      <img alt="Фотография 3 объявления" src="/media/{{ .advert.Picture3 }}">
+    </div>
+    {{ if eq .advert.Picture4 "" }}
+    <div>
+      <figure>
+        <img src="/assets/img/20uah.jpg" alt="Копюра 20 гривен - намек на стоимость оплаты премиум объявлений" title="Вы можете оплатить эту сумму для публикации еще одной фотографии">
+        <figcaption>
+            <a target="_self" href="/soon.html" title="Оплата станет доступна позже. Размещайте объявления без ограничений по колическтву объявлений">При оплате</a> этой суммы вы сможете публиковать больше фотографий.
+            <i>Источник фотоизображения: https://commons.wikimedia.org/wiki/File:20-Hryvnia-2003-front.jpg</i>
+        </figcaption>
+      </figure>
+    </div>
+    {{ else }}
+    <div>
+      <img alt="Фотография 4 объявления" src="/media/{{ .advert.Picture4 }}">
+    </div>
+    {{ end }}
+  </div>
+  <label for="tabC-1"><img style="width:auto;height:90px;" alt="Фотография 1 объявления" src="/media/{{ .advert.Picture1 }}"></label>
+  <label for="tabC-2"><img style="width:auto;height:90px;" alt="Фотография 2 объявления" src="/media/{{ .advert.Picture2 }}"></label>
+  <label for="tabC-3"><img style="width:auto;height:90px;" alt="Фотография 3 объявления" src="/media/{{ .advert.Picture3 }}"></label>
+  <label for="tabC-4">
+    {{ if eq .advert.Picture4 "" }}
+    <img style="width:auto;height:90px;" alt="Фотография стоимости в 20 гривен показывает цену оплаты премиум объявлений" src="/assets/img/20uah.jpg">
+    {{ else }}
+  <img style="width:auto;height:90px;" alt="Фотография 4 объявления" src="/media/{{ .advert.Picture4 }}">
+    {{ end }}
+  </label>
+</div><!-- .tabs .four -->
+</div>
+  </div><!-- .card -->
+</div><!-- #content -->
+
+<!-- <label for="modal_1" class="button">Уведомление о конфиденциальности</label> -->
+<div class="modal">
+  <input id="modal_1" type="checkbox" />
+  <label for="modal_1" class="overlay"></label>
+  <article>
+    <section class="content">
+      <h3  id="privacyTitle">Информация о конфиденциальности</h3>
+<p>Сайт использует зашифрованное соединение (tls), настроенные политики доступа сторонних скриптов (csp) к данным этого сайта, приватные куки (httpOnly), современные методы криптографии и дополнительные источники для данных Google Analytics. На сайте реализуется <a href="/GDPR_POLICY_RU.txt" target="_blank" rel="nofollow noopener" title="Открыть текст GDPR политики обработки персональных данный сайта" hreflang="ru">Политика обработки персональных данных сайта</a>. При посещении сайта передаются данные о вас, вашем устройстве и вашем взаимодействии с страницами сайта платформе Google Analytics по соглашению <a href="https://marketingplatform.google.com/about/analytics/terms/ru/" target="_blank" rel="nofollow noopener" hreflang="ru">Политики конфиденциальности</a> и <a href="https://developers.google.com/terms/api-services-user-data-policy" title="Откроется в новом окне Политика в отношении данных пользователей Google" target="_blank" rel="nofollow noopener" hreflang="uk">Google Policy API</a> (компаниям Google, Google LLC). В случае если вас это не устраивает - вы можете скрыть данные взаимодействия удалив куки и установив плагин с сайта adblockplus.org (и не сможете просматривать рекламу на сайте Youtube а так же персонализированный контент на других сайтах).</p>
+<p>Я подтверждаю, что я конечный пользователь, получил всю необходимую информацию о конфиденциальности этого сайта и предоставляю разрешение на сбор и обработку моих личных данных, в том числе на возможное связывание этих данных с информацией о посещениях моих сайтов и приложений, которую собирает Google Аналитика.</p>
+    </section>
+    <footer>
+      <!-- <a class="button" title="Это означает что вы понимаете написанное." href="/index.html" onclick="agreePrivacyPolicyOnce()">Подтверждаю</a> -->
+<!--       <label for="modal_1" class="button dangerous">
+        Cancel
+      </label> -->
+      <button class="" title="Это означает что вы понимаете написанное." onclick="agreePrivacyPolicyOnce()">Подтверждаю
+      </button>
+    </footer>
+  </article>
+</div>
+
+</main>
+<script>//src="/assets/privacy_agreement.js"
+var agreePrivacyPolicyOnce;
+var clientParams;
+document.onreadystatechange = function () {
+    if (document.readyState === 'complete') {
+      agreePrivacyPolicyOnce = function() {
+        when = 31536000; // Expected for year
+        document.cookie = "privacy_signer_time="+Date.now()+"; Path=/; SameSite=strict; max-age="+when;
+        document.cookie = "privacy_signer_ua="+btoa(navigator.userAgent)+"; Path=/; SameSite=strict; max-age="+when;
+        document.cookie = "privacy_signer_screen="+screen.availWidth+"x"+screen.availHeight+"; Path=/; SameSite=strict; max-age="+when;
+        document.cookie = "privacy_signer_langs="+navigator.languages.toString()+"; Path=/; SameSite=strict; max-age="+when;
+      document.getElementById('modal_1').checked = false; // close modal
+    }
+    if (!document.cookie.split(';').filter((item) => item.trim().startsWith('privacy_signer_time=')).length) {
+      document.getElementById('modal_1').checked = true; // open modal
+    }
+  }
+}
+</script>
+{{ if eq .uid 0 }}
+
+<script>
+var onSubmit = function(token) {
+  const form = document.getElementById("watchauthor");
+  form.addEventListener( "submit", function (e) {
+    e.preventDefault();
+    sendFormData();
+  });
+  function sendFormData() {
+    // const xhr = new XMLHttpRequest();
+    var xhr = makeHTTPObject();
+
+    // var formData = new FormData();
+    // formData.append('username', 'johndoe');
+    // formData.append('id', 123456);
+    const postBody = new FormData(form);
+      
+    // Var. 1.
+    // xhr.addEventListener( "load", function(e) {
+    //   let result = JSON.parse(e.target.response);//e.target.responseText;
+    //   if (!!result.ok) {
+    //     replaceDOMState(result.data);
+    //   } else {
+    //     replaceDOMState("Номер сейчас не доступен");
+    //   }
+    // });
+    // xhr.addEventListener("error", function(e) {
+    //   console.log('xhr error.');
+    // });
+
+    // Var. 2.
+    xhr.onreadystatechange = function() { 
+        if (xhr.readyState !== 4) return; 
+        if (xhr.status === 200) {
+           let result = JSON.parse(this.response);//e.target.responseText;
+          if (!!result.ok) {
+            replaceDOMState(result.data);
+          } else {
+            replaceDOMState("Номер сейчас не доступен");
+          }
+        } else {
+           console.log('HTTP error', xhr.status, xhr.statusText);
+        }
+    };
+
+// Var. 3.
+// xhr.onload = function(e) {
+//   if (this.status == 200) {
+//     console.log(this.response);
+//   }
+// };
+
+    xhr.open("POST", "/watchauthor.html", true);
+    // xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+    xhr.withCredentials = true;
+    xhr.send(postBody);
+  }
+
+  function replaceDOMState(telString) {
+      var elStateTel = document.querySelector('span#hiddentel')
+      elStateTel.textContent=telString;
+      return;
+  }
+
+  function makeHTTPObject() {
+    if (typeof XMLHttpRequest != 'undefined') {
+        return new XMLHttpRequest();
+    } try {
+        return new ActiveXObject("Msxml2.XMLHTTP");
+    } catch (e) {
+        try {
+            return new ActiveXObject("Microsoft.XMLHTTP");
+        } catch (e) {
+            console.log('XMLHttpRequest init error.')
+        }
+    }
+    return false;
+  }
+}
+</script>
+
+{{ end }}
+
+</body>
+</html>

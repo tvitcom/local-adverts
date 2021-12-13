@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="theme-color" content="#317EFB"/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="canonical" href="https://local-adverts.site/index.html"/>
+<link rel= "dns-prefetch" href="https://www.google-analytics.com/">
+<link rel= "dns-prefetch" href="https://www.googletagmanager.com/">
+<!-- <link rel= "dns-prefetch" href="https://media.local-adverts.site/"> -->
+<link rel="preload" as="image" href="/assets/img/optimised.svg">
+<link rel="preload" href="/assets/style/font/fontello.woff" as="font"> 
+<link rel="preload" href="/assets/style/style.css" as="style"> 
+<title>LOCALADVERTS - Свежие объявления сайта поиска и публикации частных и бесплатных объявлений города Харькова</title>
+<meta name="description" content="локаладвертс сайт объявлений Харькова и форма поиска в частных бесплатных объявлениях города">
+<meta name="keywords" content="локаладвертс сайт,поиск объявлений,подать объявления,подать бесплатно,объявления бесплатно,объявления харьков,объявления Украина,купить,рубрика,категория,аренда,авто,велосипед,спорт,услуги,мастера,компьютер,мебель,ремонт,GDPR,уведомление,политика,персональных,данных,конфиденциальность,куки,cookie,разрешение">
+<link rel="stylesheet prefetch" href="/assets/style/style.css">
+<link rel="icon" href="/assets/img/basket.png" type="image/png">
+
+<style>
+.card > svg > image {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+svg:hover {
+  filter: url(#pictureFilter);
+}
+@font-face { font-display: auto; }
+</style>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-AAAAAAAAAAA"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-AAAAAAAAAAA');
+</script>
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "LOCALADVERTS",
+    "alternateName": "локаладвертс сайт",
+    "description":"локаладвертс сайт объявлений Харькова и форма поиска в частных бесплатных объявлениях города",
+    "url": "https://local-adverts.site/",
+    "sameAs": "https://www.local-adverts.site/",
+    "image": "https://local-adverts.site/assets/img/basket.png",
+    "thumbnailUrl": "https://local-adverts.site/assets/img/basket.png",
+    "dateCreated": "2021-10-25 06:01:00",
+    "dateModified": "2021-10-25 06:11:00",
+    "isAccessibleForFree": true,
+    "abstract": "Classified free publication advert for private persons",
+    "keywords":"локаладвертс сайт,поиск объявлений,подать объявления,подать бесплатно,объявления бесплатно,объявления харьков,объявления Украина,купить,рубрика,категория,аренда,авто,велосипед,спорт,услуги,мастера,компьютер,мебель,ремонт,GDPR,уведомление,политика,персональных,данных,конфиденциальность,куки,cookie,разрешение",
+    "locationCreated": {
+      "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Kharkiv",
+        "addressRegion": "KH",
+        "addressCountry": "UA"
+      }
+     },
+    "educationalLevel": "beginner",
+    "accessMode": ["textual", "visual"],
+    "inLanguage":"ru,ua",
+    "offers": [
+      {
+        "@type": "Offer",
+        "name":"free usage",
+        "availability": "https://schema.org/InStock",
+        "price": "00.00",
+        "priceCurrency": "UAH"
+      },
+      {
+        "@type": "Offer",
+        "name":"premium usage",
+        "availability": "https://schema.org/InStock",
+        "price": "20.00",
+        "priceCurrency": "UAH"
+      }
+    ],
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "https://local-adverts.site/index.html?q={q}"
+      },
+      "query-input": "required name=q"
+    },
+    "interactionStatistic": {
+        "@type": "InteractionCounter",
+        "interactionType": "https://schema.org/WatchAction",
+        "userInteractionCount": "3"
+    }
+}
+</script>
+</head>
+<body>
+<nav class="transparent" style="color: #456;">
+  <a href="/index.html" class="brand" hreflang="ru"><span>LOCALADVERTS</span></a>
+  <input id="bmenu" type="checkbox" class="show">
+  <label for="bmenu" class="burger toggle pseudo button" aria-label="показать меню">Открыть меню</label>
+  <div class="menu">
+  <a href="/publication.html#form" target="_self" class="button success" aria-label="разместить объявление">Разместить</a>
+  <a href="/publication.html#about" target="_self" class="button" aria-label="прочитать о сайте">О сайте</a>
+  <a href="/auth/login.html#form" class="button icon-paper-plane" aria-label="вход в личный кабинет">Вход</a>
+  </div>
+</nav>
+<main>
+  <header class="hero" id="top">
+    <div class="content" style="color: #456;">
+      <h1>LOCALADVERTS</h1>
+      <p class="slogan" id="searchingLabel">Поиск объявлений и простое бесплатное размещение</p>
+      <form action="/index.html#listing" method="get" target="_self">
+        <input id="search" class="npm" type="search" name="q" itemprop="query-input" placeholder="что надо найти?" title="затем нажмите Enter" autofocus="autofocus" minlength="3" maxlength="30" pattern="[a-zA-Zа-яёА-ЯЁїЇіІґҐ\s\.\,\-]{3,30}" aria-labelledby="searchingLabel" autocomplete="on" required="required">
+        <p class="links" style="margin: 10px;">
+        <a href="#">Харьковская обл.</a><span> | </span>
+        <a href="#">Город</a>
+        <span> | </span>
+        <a href="#">Харьков</a>
+        </p>
+        <input type="submit" class="success slim" value="Искать по сайту" aria-label="Искать">
+      </form>
+    </div>
+  </header>
+
+<div class="content" >
+  <h1 style="text-align:center;padding-top:30px;color:#456;">Свежие объявления</h1>
+</div>
+
+<div id="listing" class="visual flex one-400 two-500 three-900" style="padding-top:30px;">
+  {{ range .adverts }}
+  <div>
+    <article class="card">
+      <svg width="360" height="240" style="cursor:pointer;border:none;" onclick="window.location.href='/watch.html?advid={{ .AdvertId }}#content'">
+       <title>Нажмите для подробностей</title>
+       <desc>{{ .Title }} {{ .Price }} {{ .Currency }}</desc>
+       <image href="/media/{{ .Picture1 }}" height="100%" width="100%" preserveAspectRatio="xMidYMid slice" />
+       <filter id="pictureFilter" >
+        <!-- <feDisplacementMap stdDeviation="5" /> -->
+        <feDropShadow stdDeviation="5" />
+      </filter> 
+      </svg>
+      <section>
+      <!-- <img src="/media/{{ .Picture1 }}" alt="{{ .Title }}" loading="lazy" decoding="async" align="left" style="cursor:pointer;border:none;width:auto;height:230px;" onclick="window.location.href='/watch.html?advid={{ .AdvertId }}'"> -->
+        <h2 id="post{{ .AdvertId }}">{{ .Title }}...</h2>
+      </section>
+      <footer>
+       {{ .Price }} {{ .Currency }} <a aria-describedby="post{{ .AdvertId }}" href="/watch.html?advid={{ .AdvertId }}">Подробности</a>
+      </footer>
+    </article>
+  </div>
+  {{ end }}
+
+  <!--
+    <div>
+    <article class="card">
+      <img src="/assets/img/forest.jpg">
+      <section>This is a nice forest. What do you want to do with it?</section>
+    </article>
+  </div>
+  <div>
+     <article class="card">
+      <img src="/assets/img/forest.jpg">
+      <section>This is a nice forest. What do you want to do with it?</section>
+    </article>
+  </div>
+  <div>
+    <article class="card">
+      <img src="/assets/img/forest.jpg">
+      <section>This is a nice forest. What do you want to do with it?</section>
+    </article>
+  </div>
+  <div>
+     <article class="card">
+      <img src="/assets/img/forest.jpg">
+      <section>This is a nice forest. What do you want to do with it?</section>
+    </article>
+  </div>
+    <div>
+    <article class="card">
+      <img src="/assets/img/forest.jpg">
+      <section>This is a nice forest. What do you want to do with it?</section>
+    </article>
+  </div>
+  <div>
+     <article class="card">
+      <img src="/assets/img/forest.jpg">
+      <section>This is a nice forest. What do you want to do with it?</section>
+    </article>
+  </div>
+  <div>
+    <article class="card">
+      <img src="/assets/img/forest.jpg">
+      <section>This is a nice forest. What do you want to do with it?</section>
+    </article>
+  </div>
+  <div>
+     <article class="card">
+      <img src="/assets/img/forest.jpg">
+      <section>This is a nice forest. What do you want to do with it?</section>
+    </article>
+  </div> -->
+</div>
+
+<!-- <label for="modal_1" class="button">Уведомление о конфиденциальности</label> -->
+<div class="modal">
+  <input id="modal_1" type="checkbox" />
+  <label for="modal_1" class="overlay"></label>
+  <article>
+    <section class="content" id="privacyNotice">
+      <h3  id="privacyTitle">Информация о конфиденциальности</h3>
+<p>Сайт использует зашифрованное соединение (tls), настроенные политики доступа сторонних скриптов (csp) к данным этого сайта, приватные куки (httpOnly), современные методы криптографии и дополнительные источники для данных Google Analytics. На сайте реализуется <a href="/GDPR_POLICY_RU.txt" target="_blank" rel="nofollow noopener" title="Открыть текст GDPR политики обработки персональных данный сайта" hreflang="ru">Политика обработки персональных данных сайта</a>. При посещении сайта передаются данные о вас, вашем устройстве и вашем взаимодействии с страницами сайта платформе Google Analytics по соглашению <a href="https://marketingplatform.google.com/about/analytics/terms/ru/" target="_blank" rel="nofollow noopener" hreflang="ru">Политики конфиденциальности</a> и <a href="https://developers.google.com/terms/api-services-user-data-policy" title="Откроется в новом окне Политика в отношении данных пользователей Google" target="_blank" rel="nofollow noopener" hreflang="uk">Google Policy API</a> (компаниям Google, Google LLC). В случае если вас это не устраивает - вы можете скрыть данные взаимодействия удалив куки и установив плагин с сайта adblockplus.org (и не сможете просматривать рекламу на сайте Youtube а так же персонализированный контент на других сайтах).</p>
+<p>Я подтверждаю, что я конечный пользователь, получил всю необходимую информацию о конфиденциальности этого сайта и предоставляю разрешение на сбор и обработку моих личных данных, в том числе на возможное связывание этих данных с информацией о посещениях моих сайтов и приложений, которую собирает Google Аналитика.</p>
+    </section>
+    <footer>
+      <!-- <a class="button" title="Это означает что вы понимаете написанное." href="/index.html" onclick="agreePrivacyPolicyOnce()">Подтверждаю</a> -->
+<!--       <label for="modal_1" class="button dangerous">
+        Cancel
+      </label> -->
+      <button class="" title="Это означает что вы понимаете написанное." onclick="agreePrivacyPolicyOnce()"  aria-describedby="privacyNotice" aria-label="Подтверждаю что существует обработка данных пользователя на сайте" aria-labelledby="privacyTitle">Подтверждаю
+      </button>
+    </footer>
+  </article>
+</div>
+
+
+  <aside>
+    <a href="#top" tabindex="-1" class="top pseudo button visible">▲ На верх ▲</a>
+  </aside>
+</main>
+<script>//src="/assets/privacy_agreement.js"
+var agreePrivacyPolicyOnce;
+var clientParams;
+document.onreadystatechange = function () {
+    if (document.readyState === 'complete') {
+      agreePrivacyPolicyOnce = function() {
+        when = 31536000; // Expected for year
+        document.cookie = "privacy_signer_time="+Date.now()+"; Path=/; SameSite=strict; max-age="+when;
+        document.cookie = "privacy_signer_ua="+btoa(navigator.userAgent)+"; Path=/; SameSite=strict; max-age="+when;
+        document.cookie = "privacy_signer_screen="+screen.availWidth+"x"+screen.availHeight+"; Path=/; SameSite=strict; max-age="+when;
+        document.cookie = "privacy_signer_langs="+navigator.languages.toString()+"; Path=/; SameSite=strict; max-age="+when;
+      document.getElementById('modal_1').checked = false; // close modal
+    }
+    if (!document.cookie.split(';').filter((item) => item.trim().startsWith('privacy_signer_time=')).length) {
+      document.getElementById('modal_1').checked = true; // open modal
+    }
+  }
+}
+</script>
+<script>// Transparent nav handler
+var nav = document.querySelector('nav');
+function navScroll(){
+  var className = 'transparent';
+  var top = window.scrollY ? window.scrollY : document.documentElement.scrollTop;
+  if (top > 0) {
+    nav.classList.remove(className);
+    [].forEach.call(document.querySelectorAll('[data-src]'), function(iframe){
+      iframe.setAttribute('src', iframe.getAttribute('data-src'));
+      iframe.removeAttribute('data-src');
+    });
+  } else {
+    nav.classList.add('transparent');
+    nav.classList.add(className);
+  }
+};
+window.onscroll = navScroll;
+navScroll();
+setTimeout(function(){ nav.classList.remove('loading'); }, 10);</script>
+</body>
+</html>

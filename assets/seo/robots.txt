@@ -1,0 +1,11 @@
+User-agent: Googlebot
+Disallow: /my/
+
+User-agent: *
+Allow: /
+
+User-agent: *
+Disallow: /agreement.html
+Disallow: /GDPR_POLICY_RU.txt
+
+Sitemap: https://local-adverts.site/sitemap.txt
